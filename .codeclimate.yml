@@ -1,8 +1,13 @@
-plugins:
-  eslint:
-    enabled: true
-    channel: "eslint-4"
-    config:
-      config: .eslintrc.json
 exclude_patterns:
 - "**/__tests__/**"
+checks:
+  complex-logic:
+    enabled: false
+  method-complexity:
+    enabled: false
+  method-lines:
+    enabled: false
+  similar-code:
+    enabled: false
+  identical-code:
+    enabled: false
