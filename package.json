@@ -10,7 +10,7 @@
     "perf": "babel-node __tests__/perf/encode.perf.js && babel-node __tests__/perf/decode.perf.js && babel-node __tests__/perf/size.perf.js",
     "build": "rollup -c"
   },
-  "files": [
+  "outputFiles": [
     {
       "input": "./index.js",
       "output": "./dist/index.js",

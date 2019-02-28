@@ -1,0 +1,110 @@
+Arguments: 
+  /Users/rl/.nvm/versions/node/v10.15.1/bin/node /usr/local/Cellar/yarn/1.13.0/libexec/bin/yarn.js publish
+
+PATH: 
+  /Users/rl/.nvm/versions/node/v10.15.1/bin:/Users/rl/bin:/usr/local/bin:/Users/rl/bin:/usr/local/bin:/Users/rl/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/rl/go/bin:/usr/local/opt/go/libexec/bin:/usr/local/Cellar/bind/9.11.2/bin
+
+Yarn version: 
+  1.13.0
+
+Node version: 
+  10.15.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  TypeError: Cannot convert object to primitive value
+      at /usr/local/Cellar/yarn/1.13.0/libexec/lib/cli.js:42250:20
+      at Array.map (<anonymous>)
+      at /usr/local/Cellar/yarn/1.13.0/libexec/lib/cli.js:42249:38
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/1.13.0/libexec/lib/cli.js:304:30)
+      at /usr/local/Cellar/yarn/1.13.0/libexec/lib/cli.js:315:13
+
+npm manifest: 
+  {
+    "name": "whitney-buffers",
+    "version": "0.0.1",
+    "description": "tiny self-describing binary protocol based on Arthur Whitney's q protocol",
+    "main": "dist/index.cjs",
+    "module": "index.js",
+    "scripts": {
+      "lint": "standard --fix",
+      "test": "jest ./__tests__/unit",
+      "perf": "babel-node __tests__/perf/encode.perf.js && babel-node __tests__/perf/decode.perf.js && babel-node __tests__/perf/size.perf.js",
+      "build": "rollup -c"
+    },
+    "files": [
+      {
+        "input": "./index.js",
+        "output": "./dist/index.js",
+        "format": "iife"
+      },
+      {
+        "input": "./aliased.js",
+        "output": "./dist/aliased.js",
+        "format": "iife"
+      },
+      {
+        "input": "./buffer.js",
+        "output": "./dist/buffer.js",
+        "format": "iife"
+      },
+      {
+        "input": "./all.js",
+        "output": "./dist/index.cjs",
+        "format": "cjs"
+      }
+    ],
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/supremetechnopriest/whitney-buffers.git"
+    },
+    "keywords": [
+      "data",
+      "binary",
+      "protocol",
+      "q",
+      "browser"
+    ],
+    "author": "Randy Lebeau",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/supremetechnopriest/whitney-buffers/issues"
+    },
+    "homepage": "https://github.com/supremetechnopriest/whitney-buffers#readme",
+    "dependencies": {
+      "long": "^4.0.0",
+      "uuid-parse": "^1.0.0"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.3.3",
+      "@babel/node": "^7.2.2",
+      "@babel/preset-env": "^7.3.1",
+      "babel-jest": "^24.1.0",
+      "benchmark": "^2.1.4",
+      "jest": "^24.1.0",
+      "jest-puppeteer": "^4.0.0",
+      "microtime": "^3.0.0",
+      "puppeteer": "^1.12.2",
+      "rollup": "^1.2.2",
+      "rollup-plugin-babel-minify": "^7.0.0",
+      "rollup-plugin-bundle-size": "^1.0.3",
+      "rollup-plugin-commonjs": "^9.2.0",
+      "rollup-plugin-node-globals": "^1.4.0",
+      "rollup-plugin-node-resolve": "^4.0.0",
+      "rollup-plugin-progress": "^1.0.0",
+      "rollup-plugin-visualizer": "^1.0.0",
+      "standard": "^12.0.1"
+    },
+    "jest": {
+      "collectCoverage": true
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

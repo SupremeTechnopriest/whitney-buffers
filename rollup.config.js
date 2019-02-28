@@ -4,9 +4,9 @@ import progress from 'rollup-plugin-progress'
 import size from 'rollup-plugin-bundle-size'
 import visualizer from 'rollup-plugin-visualizer'
 import minify from 'rollup-plugin-babel-minify'
-import { files } from './package.json'
+import { outputFiles } from './package.json'
 
-export default files.map(f => ({
+export default outputFiles.map(f => ({
   input: f.input,
   output: {
     name: 'wb',
