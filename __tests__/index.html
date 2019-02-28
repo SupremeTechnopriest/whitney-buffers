@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Whitney Buffers</title>
+  </head>
+  <body>
+    <script type="text/javascript" src="../dist/buffer.js"></script>
+    <script type="text/javascript" src="../dist/index.js"></script>
+    <script type="text/javascript">
+      const obj = {}
+      const objTyped = {}
+
+      for (let i = 0; i < 15000; i++) {
+        obj[i] = i
+        objTyped[i] = wb.i(i)
+      }
+       wb.dec(wb.enc(obj))
+       setTimeout(() => {
+          wb.dec(wb.enc(objTyped))
+       }, 1000)
+   </script>
+
+    </script>
+  </body>
+</html>
