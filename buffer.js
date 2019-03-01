@@ -1,4 +1,5 @@
 /* eslint-disable no-proto */
+/* globals self */
 import ieee754 from './_private/ieee754'
 import { checkIEEE754, checkInt, checkOffset, checkSize } from './_private/assert'
 import { utf8ToBytes, utf8Slice, blitBuffer } from './_private/utf8'
@@ -190,4 +191,6 @@ Buffer.prototype.readInt32LE = function (offset) {
 
 if (typeof window !== 'undefined' && !window.Buffer) {
   window.Buffer = Buffer
+} else if (typeof importScripts === 'function' && !self.Buffer) {
+  self.Buffer = Buffer
 }
