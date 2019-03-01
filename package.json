@@ -1,6 +1,6 @@
 {
   "name": "whitney-buffers",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "tiny self-describing binary protocol based on Arthur Whitney's q protocol",
   "main": "dist/index.cjs",
   "module": "index.js",
