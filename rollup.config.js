@@ -12,7 +12,8 @@ export default outputFiles.map(f => ({
     name: 'wb',
     file: f.output,
     format: f.format,
-    sourceMap: true
+    sourceMap: true,
+    exports: 'named'
   },
   plugins: [
     resolve({ module: true, main: true }),

@@ -1,7 +1,7 @@
 /* eslint-env jest */
 import { api, types, structs } from '../../_private/aliases'
-import wbDefault from '../../index'
-import wbAliased from '../../aliased'
+import wbDefault, { enc, dec, i, I, list, dict } from '../../index'
+import wbAliased, { encode, decode, int, ints, list as aList, dict as aDict } from '../../aliased'
 import wbAll from '../../all'
 import wbBuffer from '../../buffer'
 
@@ -17,6 +17,25 @@ describe('[NODE] exports', () => {
           expect(wbDefault[k.toUpperCase()]).toBeDefined()
           expect(wbDefault[types[`${k}s`]]).toBeUndefined()
         })
+      })
+    })
+
+    describe('destructured imports', () => {
+      test('should import from default export', () => {
+        expect(enc).toBeDefined()
+        expect(dec).toBeDefined()
+        expect(i).toBeDefined()
+        expect(I).toBeDefined()
+        expect(list).toBeDefined()
+        expect(dict).toBeDefined()
+      })
+      test('should import from aliased export', () => {
+        expect(encode).toBeDefined()
+        expect(decode).toBeDefined()
+        expect(int).toBeDefined()
+        expect(ints).toBeDefined()
+        expect(aList).toBeDefined()
+        expect(aDict).toBeDefined()
       })
     })
 
