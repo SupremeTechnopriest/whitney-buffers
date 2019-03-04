@@ -188,15 +188,15 @@ describe('[NODE] encode()', () => {
 
   describe('long', () => {
     test('Should throw when long type is incorrect', () => {
-      expect(() => { wb.j(null, null) }).toThrow(new Error('low and high required for long'))
-      expect(() => { wb.j(undefined, undefined) }).toThrow(new Error('low and high required for long'))
-      expect(() => { wb.j('', '') }).toThrow(new Error('low and high required for long'))
-      expect(() => { wb.j('a') }).toThrow(new Error('low and high required for long'))
-      expect(() => { wb.J([['a'], ['b']]) }).toThrow(new Error('low and high required for long'))
+      expect(() => { wb.j({ low: null, high: null }) }).toThrow(new Error('low and high required for long'))
+      expect(() => { wb.j({ low: undefined, high: undefined }) }).toThrow(new Error('low and high required for long'))
+      expect(() => { wb.j({ low: '', high: '' }) }).toThrow(new Error('low and high required for long'))
+      expect(() => { wb.j({ low: 'a' }) }).toThrow(new Error('low and high required for long'))
+      expect(() => { wb.J([{ low: 'a' }, { high: 'b' }]) }).toThrow(new Error('low and high required for long'))
     })
     test('Should encode typed longs', () => {
       const data = {
-        long: wb.j(...obj.long),
+        long: wb.j(obj.long),
         longs: wb.J(obj.longs)
       }
       const encoded = enc(data)
@@ -217,14 +217,14 @@ describe('[NODE] encode()', () => {
 
     test('Should encode Infinity and -Infinity', () => {
       const data = {
-        infinity: wb.j(Infinity, Infinity),
-        ninifinity: wb.j(-Infinity, -Infinity),
-        highInfinity: wb.j(0, Infinity),
-        highNInfinity: wb.j(0, -Infinity),
-        listInfinity: wb.J([[Infinity, Infinity], [Infinity, Infinity]]),
-        listNinifinity: wb.J([[-Infinity, -Infinity], [-Infinity, -Infinity]]),
-        listHighInfinity: wb.J([[0, Infinity], [0, Infinity]]),
-        listHighNInfinity: wb.J([[0, -Infinity], [0, -Infinity]])
+        infinity: wb.j({ low: Infinity, high: Infinity }),
+        ninifinity: wb.j({ low: -Infinity, high: -Infinity }),
+        highInfinity: wb.j({ low: 0, high: Infinity }),
+        highNInfinity: wb.j({ low: 0, high: -Infinity }),
+        listInfinity: wb.J([{ low: Infinity, high: Infinity }, { low: Infinity, high: Infinity }]),
+        listNinifinity: wb.J([{ low: -Infinity, high: -Infinity }, { low: -Infinity, high: -Infinity }]),
+        listHighInfinity: wb.J([{ low: 0, high: Infinity }, { low: 0, high: Infinity }]),
+        listHighNInfinity: wb.J([{ low: 0, high: -Infinity }, { low: 0, high: -Infinity }])
       }
       const encoded = enc(data)
       expect(encoded).toBeInstanceOf(Buffer)

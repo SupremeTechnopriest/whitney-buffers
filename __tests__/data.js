@@ -14,8 +14,8 @@ export const obj = {
   shorts: [10, 11],
   int: 2147483646,
   ints: [1, 2147483646],
-  long: ['0xFFFFFFFF', '0x22222222'],
-  longs: [['0xFFFFFFFF', '0x22222222'], ['0xFFFFFFFF', '0x22222222']],
+  long: { low: '0xFFFFFFFF', high: '0x22222222' },
+  longs: [{ low: '0xFFFFFFFF', high: '0x22222222' }, { low: '0xFFFFFFFF', high: '0x22222222' }],
   real: 21474.8359375,
   reals: [1, -21474.8359375],
   float: 0.12345,
@@ -44,11 +44,7 @@ export const obj = {
 
 export const objTyped = {}
 Object.keys(obj).forEach(k => {
-  if (k === 'long') {
-    objTyped[k] = wb[k](...obj[k])
-  } else {
-    objTyped[k] = wb[k](obj[k])
-  }
+  objTyped[k] = wb[k](obj[k])
 })
 
 export const validUntypedNulls = {

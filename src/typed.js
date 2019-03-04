@@ -138,8 +138,7 @@ export const I = function (numbers) {
  * @param  {string} string
  * @return {Typed}
  */
-export const j = function (low, high) {
-  'use strict'
+export const j = function ({ low, high }) {
   if (low === Infinity || low === -Infinity) {
     return new Typed('long', low)
   }
@@ -158,18 +157,17 @@ export const j = function (low, high) {
  * @return {Typed}
  */
 export const J = function (longs) {
-  'use strict'
   longs = longs.map(l => {
-    if (l[0] === Infinity || l[0] === -Infinity) {
-      return l[0]
+    if (l.low === Infinity || l.low === -Infinity) {
+      return l.low
     }
-    if (l[1] === Infinity || l[1] === -Infinity) {
-      return l[1]
+    if (l.high === Infinity || l.high === -Infinity) {
+      return l.high
     }
-    if (!l[0] || !l[1]) {
+    if (!l.low || !l.high) {
       throw new Error('low and high required for long')
     }
-    return new Long(l[0], l[1])
+    return new Long(l.low, l.high)
   })
   return new Typed('typedlist', longs, 'long')
 }

@@ -114,7 +114,7 @@ const pkt = enc({
   bool: b(true),
   int: i(-1),
   float: f(3.14),
-  long: j('0xFFFFFFFF', '0x22222222')
+  long: j({ low: '0xFFFFFFFF', high: '0x22222222' })
 })
 // pkt = Uint8Array(66) [...]
 ```
@@ -125,7 +125,7 @@ const pkt = enc({
   bool: boolean(true),
   int: int(-1),
   float: float(3.14),
-  long: long('0xFFFFFFFF', '0x22222222')
+  long: long({ low: '0xFFFFFFFF', high: '0x22222222' })
 })
 // pkt = Uint8Array(66) [...]
 ```
@@ -158,7 +158,7 @@ Below is a map of all the types, their vector representations, their size in byt
 | Byte      | x      | X      | byte           | bytes          | 1    | x(byte: `number`)                   |
 | Short     | h      | H      | short          | shorts         | 2    | h(byte: `number`)                   |
 | Integer   | i      | I      | int            | ints           | 4    | i(byte: `number`)                   |
-| Long      | j      | J      | long           | longs          | 8    | j([ low: `number`, high: `number`]) |
+| Long      | j      | J      | long           | longs          | 8    | j({ low: `number`, high: `number` })|
 | Real      | e      | E      | real           | reals          | 4    | e(real: `number`)                   |
 | Float     | f      | F      | float          | floats         | 8    | f(float: `number`)                  |
 | Character | c      | C      | char           | chars          | 1    | c(char: `number`)                   |
@@ -186,7 +186,7 @@ const pkt = enc(dict({
   bool: b(true),
   int: i(-1),
   float: f(3.14),
-  long: j('0xFFFFFFFF', '0x22222222')
+  long: j({ low: '0xFFFFFFFF', high: '0x22222222' })
 }))
 // pkt = Uint8Array(66)
 ```
@@ -200,7 +200,7 @@ const pkt = enc(list([
   b(true),
   i(-1),
   f(3.14),
-  j('0xFFFFFFFF', '0x22222222')
+  j({ low: '0xFFFFFFFF', high: '0x22222222' })
 ]))
 // pkt = Uint8Array(39)
 ```
