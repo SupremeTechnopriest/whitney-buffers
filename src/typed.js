@@ -145,7 +145,7 @@ export const j = function ({ low, high }) {
   if (high === Infinity || high === -Infinity) {
     return new Typed('long', high)
   }
-  if (!low || !high) {
+  if ((!low && low !== 0) || (!high && high !== 0)) {
     throw new Error('low and high required for long')
   }
   const long = new Long(low, high)
@@ -164,7 +164,7 @@ export const J = function (longs) {
     if (l.high === Infinity || l.high === -Infinity) {
       return l.high
     }
-    if (!l.low || !l.high) {
+    if ((!l.low && l.low !== 0) || (!l.high && l.high !== 0)) {
       throw new Error('low and high required for long')
     }
     return new Long(l.low, l.high)
