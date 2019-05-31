@@ -18,7 +18,7 @@ export default outputFiles.map(f => ({
   plugins: [
     resolve({ module: true, main: true }),
     commonjs({ include: 'node_modules/**' }),
-    minify({ comments: false }),
+    minify({ comments: false, mangle: false }),
     progress(),
     size(),
     visualizer()
