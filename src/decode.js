@@ -9,7 +9,7 @@ import {
   INT_NEG_INFINITY
 } from '../_private/constants'
 
-export default function decode (b, nanos2date) {
+export default function decode (b, nanos2date = true) {
   let pos = 8
   function rBool () {
     return rInt8() === 1
