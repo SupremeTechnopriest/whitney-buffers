@@ -1,6 +1,5 @@
 import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
-import progress from 'rollup-plugin-progress'
 import size from 'rollup-plugin-bundle-size'
 import visualizer from 'rollup-plugin-visualizer'
 import minify from 'rollup-plugin-babel-minify'
@@ -19,7 +18,6 @@ export default outputFiles.map(f => ({
     resolve({ module: true, main: true }),
     commonjs({ include: 'node_modules/**' }),
     minify({ comments: false, mangle: true }),
-    progress(),
     size(),
     visualizer()
   ]

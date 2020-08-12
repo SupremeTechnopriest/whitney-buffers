@@ -1,5 +1,4 @@
 /* eslint-disable no-proto */
-/* globals self */
 import ieee754 from './_private/ieee754'
 import { checkIEEE754, checkInt, checkOffset, checkSize } from './_private/assert'
 import { utf8ToBytes, utf8Slice, blitBuffer } from './_private/utf8'

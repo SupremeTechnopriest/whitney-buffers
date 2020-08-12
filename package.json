@@ -69,7 +69,6 @@
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-globals": "^1.4.0",
     "rollup-plugin-node-resolve": "^4.0.0",
-    "rollup-plugin-progress": "^1.0.0",
     "rollup-plugin-visualizer": "^1.0.0",
     "standard": "^12.0.1"
   },
