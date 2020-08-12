@@ -1,6 +1,7 @@
 /* eslint-env jest */
 import Long from 'long'
 import { testTime } from '../utils'
+import Buffer from '../../buffer'
 import wb from '../../index'
 import enc from '../../src/encode'
 import dec from '../../src/decode'

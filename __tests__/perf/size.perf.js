@@ -1,4 +1,5 @@
 import { now } from 'microtime'
+import Buffer from '../../buffer'
 import wb from '../../index'
 import enc from '../../src/encode'
 import dec from '../../src/decode'

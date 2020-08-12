@@ -1,5 +1,7 @@
 /* eslint-disable no-redeclare */
 import { Typed, isTyped } from '../src/typed'
+import Buffer from '../buffer'
+
 import {
   QTYPES2SIZE,
   QTYPES2NUM,

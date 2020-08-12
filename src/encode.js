@@ -16,6 +16,7 @@ import {
   calcN
 } from '../_private/utils'
 import { Typed, isTyped } from './typed'
+import Buffer from '../buffer'
 
 export default function encode (x) {
   var pos = 0
@@ -180,24 +181,24 @@ export default function encode (x) {
   }
 
   var qtype2wfn = {
-    'boolean': wboolean,
-    'guid': wguid,
-    'byte': wbyte,
-    'short': wshort,
-    'int': wint,
-    'long': wlong,
-    'real': wreal,
-    'float': wfloat,
-    'char': wchar,
-    'symbol': wsymbol,
-    'timestamp': wtimestamp,
-    'month': wmonth,
-    'date': wdate,
-    'datetime': wdatetime,
-    'timespan': wtimespan,
-    'minute': wminute,
-    'second': wsecond,
-    'time': wtime
+    boolean: wboolean,
+    guid: wguid,
+    byte: wbyte,
+    short: wshort,
+    int: wint,
+    long: wlong,
+    real: wreal,
+    float: wfloat,
+    char: wchar,
+    symbol: wsymbol,
+    timestamp: wtimestamp,
+    month: wmonth,
+    date: wdate,
+    datetime: wdatetime,
+    timespan: wtimespan,
+    minute: wminute,
+    second: wsecond,
+    time: wtime
   }
 
   function type2wfn (t) {

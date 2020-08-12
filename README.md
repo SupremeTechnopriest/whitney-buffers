@@ -27,10 +27,7 @@ Install from npm or grab the latest release.
 
 `npm i --save whitney-buffers` or `yarn add whitney-buffers`
 
-If you use webpack, browserify, rollup or similar, you can include a stripped down version of buffer to save on export size.
-
 ```javascript
-import 'whitney-buffers/buffer'
 import wb from 'whitney-buffers'
 ```
 

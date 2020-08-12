@@ -188,9 +188,3 @@ Buffer.prototype.readInt32LE = function (offset) {
     (this[offset + 2] << 16) |
     (this[offset + 3] << 24)
 }
-
-if (typeof window !== 'undefined' && !window.Buffer) {
-  window.Buffer = Buffer
-} else if (typeof importScripts === 'function' && !self.Buffer) {
-  self.Buffer = Buffer
-}
